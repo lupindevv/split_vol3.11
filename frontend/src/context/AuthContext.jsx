@@ -13,21 +13,14 @@ const dummyUser = {
 export const AuthProvider = ({ children }) => {
     // Initialize with the dummy admin user immediately
     const [user] = useState(dummyUser);
-    const [token] = useState('bypass-token');
     const [loading] = useState(false);
 
-    const login = async () => ({ success: true });
-    const register = async () => ({ success: true });
     const logout = () => { console.log("Logout disabled"); };
 
     const value = {
         user,
-        token,
         loading,
-        login,
-        register,
-        logout,
-        isAuthenticated: true // Always authenticated
+        logout
     };
 
     return (

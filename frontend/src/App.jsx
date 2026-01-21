@@ -23,6 +23,7 @@ function App() {
                             </ProtectedRoute>
                         }
                     />
+                    <Route path="/login" element={<Navigate to="/dashboard" replace />} />
                     
                     {/* Redirect everything else to the Dashboard */}
                     <Route path="/" element={<Navigate to="/dashboard" replace />} />
