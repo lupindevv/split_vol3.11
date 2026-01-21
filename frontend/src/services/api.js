@@ -23,12 +23,6 @@ api.interceptors.request.use(
     }
 );
 
-export const authAPI = {
-    login: (email, password) => api.post('/api/auth/login', { email, password }),
-    register: (data) => api.post('/api/auth/register', data),
-    getMe: () => api.get('/api/auth/me')
-};
-
 export const menuAPI = {
     getAll: (params) => api.get('/api/menu', { params }),
     getById: (id) => api.get(`/api/menu/${id}`),
