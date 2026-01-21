@@ -1,4 +1,5 @@
-// Replace the entire protect function with this:
+// backend/src/middleware/auth.js
+
 const protect = (req, res, next) => {
     // Automatically inject a dummy admin user
     req.user = {
@@ -7,10 +8,12 @@ const protect = (req, res, next) => {
         role: 'admin',
         restaurant_id: 1
     };
-    next(); // Always proceed to the next function
+    next(); 
 };
 
-// Ensure isAdmin always allows access
 const isAdmin = (req, res, next) => {
     next();
 };
+
+// ADD THIS LINE AT THE BOTTOM:
+module.exports = { protect, isAdmin };
